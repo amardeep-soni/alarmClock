@@ -117,7 +117,10 @@ body {
     padding: 1px 31px;
     background-image: url(image/digital.png);
     background-repeat: no-repeat;
-    background-size: 250px;
+    background-size: 95% 102%;
+    width: 270px;
+    height: 100px;
+    text-align: center;
 }
 
 #modeBtn {
@@ -136,7 +139,7 @@ body {
 }
 
 .digit {
-    font-size: 100px;
+    font-size: 102px;
     font-family: 'digital-clock-font';
     color: #ff0000;
     text-shadow: 0 0 15px rgba(230, 58, 82, 0.8);

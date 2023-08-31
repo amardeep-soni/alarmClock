@@ -11,6 +11,21 @@ setInterval(() => {
 
 }, 1000);
 
+// touch
+let timeCont;
+function isTouchDevice() {
+    timeCont = document.getElementById('timeCont');
+
+    return 'ontouchstart' in window || navigator.maxTouchPoints;
+}
+if (isTouchDevice()) {
+    console.log('touch');
+    timeCont.style.padding = "10px 31px";
+} else {
+    timeCont.style.padding = "1px 31px";
+    console.log('no touch');
+}
+
 let hourDigitOne = document.getElementById('hour-one');
 let hourDigitTwo = document.getElementById('hour-two');
 
