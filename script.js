@@ -1,3 +1,16 @@
+// current time displaying
+let currentTimeElement = document.getElementById('currentTime');
+
+setInterval(() => {
+    let currentTime = new Date();
+    let h = currentTime.getHours().toString().padStart(2, '0');
+    let m = currentTime.getMinutes().toString().padStart(2, '0');
+    let s = currentTime.getSeconds().toString().padStart(2, '0');
+
+    currentTimeElement.innerText = `${h}:${m}:${s}`;
+
+}, 1000);
+
 let hourDigitOne = document.getElementById('hour-one');
 let hourDigitTwo = document.getElementById('hour-two');
 
@@ -283,4 +296,3 @@ szoneElement.addEventListener('click', () => {
     }, 600000)
 
 });
-

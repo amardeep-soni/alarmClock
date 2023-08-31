@@ -90,14 +90,15 @@ body {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 10px;
-    font-size: 19px;
+    font-size: 15px;
+    color: #c5c4c4;
 }
 
 #alarmContainer {
     background: rgb(31, 30, 30);
     color: white;
     border-radius: 15px;
-    padding: 20px;
+    padding: 15px 20px;
 
 }
 
