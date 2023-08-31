@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alarm Clock</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Signika+Negative&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="nightwrapper"></div>
+    <div id="daywrapper"></div>
+    <div id="firstSection">
+        <div id="logo">
+            <img src="image/clock.png" alt="Clock picture">
+        </div>
+        <div id="logoTextCont">
+            <p id="logoText">Alarm Clock</p>
+            <p class="text">Online Alarm clock. Designed to wake you up.</p>
+        </div>
+    </div>
+    <div id="container">
+        <div id="secondSection">
+            <div class="secondItems">
+                <p class="secondText">Wake me at</p>
+                <div id="alarmContainer">
+                    <div id="currentTimeCont">Current Time: &nbsp;<span id="currentTime">00:00:00</span></div>
+                    <div id="timeCont">
+                        <span id="hour-one" class="digit">0</span>
+                        <span id="hour-two" class="digit">0</span>
+                        <span id="dooted" class="digit">:</span>
+                        <span id="minute-one" class="digit">0</span>
+                        <span id="minute-two" class="digit">0</span>
+                    </div>
+                    <div id="incDecBtn">
+                        <div id="hourIncDec">
+                            <span id="hourInc" class="buttonShadow">+</span>
+                            <span id="hourDec" class="buttonShadow">-</span>
+                        </div>
+                        <div id="minIncDec">
+                            <span id="minuteInc" class="buttonShadow">+</span>
+                            <span id="minuteDec" class="buttonShadow">-</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="secondItems">
+                <p class="secondText">With Sound of</p>
+                <div id="chooseSound">
+                    <div id="soundName">Song</div>
+                    <span id="previousSound"><img src="image/lesssThan.png" alt=""></span>
+                    <span id="nextSound"><img src="image/greaterThan.png" alt=""></span>
+                    <div id="soundImage"><img src="image/clock.png"></div>
+                    <div id="playSound"><img src="image/pause.png"></div>
+                </div>
+            </div>
+        </div>
+
+        <button id="setAlarmBtn">Set Alarm</button>
+
+    </div>
+</body>
+
+</html>

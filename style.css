@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'digital-clock-font';
+    src: url('font/digitalFont4.ttf');
+}
+
+body {
+    padding: 20px;
+    padding-top: 0px;
+    font-family: 'Signika Negative', sans-serif;
+}
+
+#daywrapper {
+    background-color: #96c6e0;
+    background-image: url(./image/bgDay.jpg);
+    background-repeat: no-repeat;
+    background-position: 30% 6%;
+    background-attachment: fixed;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -9;
+    overflow: hidden;
+
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 75.4vh;
+}
+
+#firstSection {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px 0;
+}
+
+#logo img {
+    width: 80px;
+    margin-right: 24px;
+}
+
+#logoTextCont #logoText {
+    font-size: 50px;
+    font-weight: bold;
+    color: red;
+    text-shadow: 2px 2px 2px #222222;
+}
+
+#logoTextCont .text {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#secondSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.secondItems {
+    display: flex;
+    align-items: center;
+}
+
+.secondItems:nth-child(2) {
+    margin-left: 20px;
+}
+
+.secondText {
+    font-size: 32px;
+    font-weight: bold;
+    margin-right: 20px;
+}
+
+#currentTimeCont {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    font-size: 19px;
+}
+
+#alarmContainer {
+    background: rgb(31, 30, 30);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+
+}
+
+#timeCont {
+    padding: 2px 31px;
+    background-image: url(image/digital.png);
+    background-repeat: no-repeat;
+    background-size: 250px;
+}
+
+.digit {
+    font-size: 100px;
+    font-family: 'digital-clock-font';
+    color: #ff0000;
+    text-shadow: 0 0 15px rgba(230, 58, 82, 0.8);
+    cursor: default;
+
+    transition: none !important;
+}
+
+#incDecBtn {
+    display: flex;
+    justify-content: space-around;
+    padding: 10px 0 0 0;
+    transition: none !important;
+}
+
+#hourIncDec {
+    display: flex;
+    justify-content: space-between;
+    width: 30%;
+    font-size: 25px;
+    transition: none !important;
+    user-select: none;
+}
+
+#minIncDec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 30%;
+    font-size: 25px;
+    transition: none !important;
+    user-select: none;
+}
+
+.buttonShadow {
+    padding: 0px 8px;
+    box-shadow: 2px 2px 5px rgb(92, 89, 89);
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 30px;
+}
+
+.buttonShadow:active {
+    box-shadow: 0px 0px 5px rgb(92, 89, 89);
+}
+
+#hour-one {
+    margin-left: -14px;
+}
+
+#minute-one {
+    margin-left: 2px;
+}
+
+#hour-two {
+    margin-left: -3px;
+}
+
+#minute-two {
+    margin-left: -3px;
+}
+
+#chooseSoundText {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    margin: 15px 0;
+    text-align: center;
+}
+
+#chooseSound {
+    background: rgb(36, 36, 36);
+    color: white;
+    border-radius: 15px;
+    padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 260px;
+
+    position: relative;
+}
+
+#soundName {
+    font-size: 30px;
+}
+
+#soundImage {
+    border: 1.5px solid white;
+    width: 150px;
+    text-align: center;
+    margin: 10px 0;
+}
+
+#soundImage img {
+    width: 80px;
+    padding: 5px;
+}
+
+#previousSound {
+    position: absolute;
+    top: 90px;
+    left: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#nextSound {
+    position: absolute;
+    top: 90px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+#playSound {
+    cursor: pointer;
+}
+
+#previousSound img,
+#nextSound img,
+#playSound img {
+    width: 20px;
+}
+
+#playSound {
+    width: 20px;
+    height: 20px;
+}
+
+#setAlarmBtn {
+    padding: 18px 26px;
+    font-size: 22px;
+    font-weight: bold;
+    background-color: red;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1030px) {
+    #secondSection {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .secondItems {
+        display: block;
+    }
+
+    .secondItems:nth-child(2) {
+        margin-top: 20px;
+        margin-left: -20px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+
+    #logo img {
+        width: 70px;
+    }
+
+    #logoTextCont #logoText {
+        font-size: 36px;
+    }
+
+    #logoTextCont .text {
+        font-size: 16px;
+    }
+}
