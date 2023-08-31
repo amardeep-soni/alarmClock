@@ -296,3 +296,28 @@ szoneElement.addEventListener('click', () => {
     }, 600000)
 
 });
+
+let dayBgElem = document.getElementById('dayBg');
+let nightBgElem = document.getElementById('nightBg');
+let modeElem = document.getElementById('modeBtn');
+let isDay = true;
+let colorElem;
+
+modeElem.addEventListener('click', () => {
+    colorElem = document.getElementsByClassName('changeColor');
+    isDay = !isDay;
+    if (isDay) {
+        dayBgElem.style.opacity = 1;
+        nightBgElem.style.opacity = 0;
+        changeColor('black')
+    } else {
+        nightBgElem.style.opacity = 1;
+        dayBgElem.style.opacity = 0;
+        changeColor('white')
+    }
+});
+function changeColor(color) {
+    for (let i = 0; i < colorElem.length; i++) {
+        colorElem[i].style.color = color;
+    }
+}
