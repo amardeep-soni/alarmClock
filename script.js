@@ -125,3 +125,69 @@ function minuteBtnPossition() {
         minuteDigitOne.style.marginLeft = '2px'
     }
 }
+const songs = [
+    { image: 'audio1.jpg', audio: 'audio1.mp3', name: 'cockerel' },
+    { image: 'audio2.jpg', audio: 'audio2.mp3', name: 'classic clock' },
+    { image: 'audio3.jpg', audio: 'audio3.mp3', name: 'electronic' },
+    { image: 'audio4.jpg', audio: 'audio4.mp3', name: 'guitar' },
+    { image: 'audio5.jpg', audio: 'audio5.mp3', name: 'military' },
+    { image: 'audio6.jpg', audio: 'audio6.mp3', name: 'allien' }
+];
+let playSoundElement = document.getElementById('playSound').firstChild;
+
+let soundNameElement = document.getElementById('soundName');
+let soundImageElement = document.getElementById('soundImage').firstChild;
+
+let previousSoundElement = document.getElementById('previousSound');
+let nextSoundElement = document.getElementById('nextSound');
+
+let counter = 0;
+let audio;
+let playSoundCount = 0;
+
+setSong();
+function setSong() {
+    soundNameElement.innerText = songs[counter].name;
+    soundImageElement.src = '../image/' + songs[counter].image;
+    audio = new Audio('audio/' + songs[counter].audio);
+    playSoundCount = 0;
+    playSoundElement.src = '../image/' + 'pause.png'
+}
+
+function playSound() {
+    if (playSoundCount == 0) {
+        audio.play();
+        audio.loop = true;
+        playSoundCount++
+
+        playSoundElement.src = '../image/' + 'play.png'
+    }
+    else {
+        audio.pause();
+        audio.currentTime = 0;
+        playSoundCount = 0;
+
+        playSoundElement.src = '../image/' + 'pause.png'
+    }
+}
+
+nextSoundElement.addEventListener("click", function () {
+    audio.pause();
+    counter++;
+
+    if (counter == songs.length) {
+        counter = 0;
+    }
+    setSong();
+});
+
+previousSoundElement.addEventListener("click", function () {
+    audio.pause();
+    console.log(counter);
+    if (counter == 0) {
+        counter = songs.length;
+    }
+    counter--;
+    console.log(counter);
+    setSong();
+});

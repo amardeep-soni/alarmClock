@@ -197,18 +197,17 @@ body {
 
 #soundName {
     font-size: 30px;
+    text-transform: uppercase;
 }
 
 #soundImage {
-    border: 1.5px solid white;
     width: 150px;
     text-align: center;
     margin: 10px 0;
 }
 
 #soundImage img {
-    width: 80px;
-    padding: 5px;
+    width: 100%;
 }
 
 #previousSound {
