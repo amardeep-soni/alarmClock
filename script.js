@@ -1,6 +1,3 @@
-console.log('I am working');
-
-
 let hourDigitOne = document.getElementById('hour-one');
 let hourDigitTwo = document.getElementById('hour-two');
 
@@ -183,11 +180,107 @@ nextSoundElement.addEventListener("click", function () {
 
 previousSoundElement.addEventListener("click", function () {
     audio.pause();
-    console.log(counter);
     if (counter == 0) {
         counter = songs.length;
     }
     counter--;
-    console.log(counter);
     setSong();
 });
+
+// set alarm 
+let secondSection = document.getElementById('secondSection');
+
+let firstShowElement = document.getElementById('firstShow')
+let secondShowElement = document.getElementById('secondShow')
+let thirdShowElement = document.getElementById('thirdShow')
+
+
+let setAlarmElement = document.getElementById('setAlarmBtn');
+setAlarmElement.addEventListener('click', setAlarmFunction);
+
+function setAlarmFunction() {
+    let setHour = `${hOne}${hTwo}`
+    let setMinute = `${mOne}${mTwo}`
+
+    changingDom();
+
+    ringing(setHour, setMinute);
+
+}
+
+
+function changingDom() {
+    secondSection.style.opacity = 0;
+    setAlarmElement.style.opacity = 0;
+    setTimeout(() => {
+        secondSection.style.display = "none";
+        setAlarmElement.style.display = 'none';
+
+
+    }, 700);
+    setTimeout(() => {
+
+        firstShowElement.style.display = 'block'
+        thirdShowElement.style.display = 'block'
+    }, 900)
+}
+
+function ringing(setHour, setMinute) {
+    let alarmInterval = setInterval(() => {
+        let now = new Date();
+        let nowHour = now.getHours();
+        let nowMinute = now.getMinutes();
+
+        if (nowHour == setHour && nowMinute == setMinute) {
+            clearInterval(alarmInterval);
+            szoneDomChange();
+            playSound();
+        }
+
+    }, 1000);
+}
+
+// cancelling alarm 
+
+
+let cancelAlarmElement = document.getElementById('cancelAlarm');
+
+cancelAlarmElement.addEventListener('click', () => {
+    location.reload()
+});
+
+function szoneDomChange() {
+    firstShowElement.style.display = 'none';
+    secondShowElement.style.display = 'block';
+    thirdShowElement.style.display = 'none'
+}
+
+let setNewAlarmElement = document.getElementById('setNewAlarm')
+setNewAlarmElement.addEventListener('click', () => {
+    location.reload()
+})
+
+
+let szoneElement = document.getElementById('szone');
+szoneElement.addEventListener('click', () => {
+    audio.pause();
+    audio.currentTime = 0;
+
+    secondShowElement.style.display = 'none'
+    firstShowElement.style.display = 'block';
+    thirdShowElement.style.display = 'block';
+
+
+    setTimeout(() => {
+        audio.play();
+        audio.loop = true;
+
+
+        secondShowElement.style.display = 'block'
+        firstShowElement.style.display = 'none';
+        thirdShowElement.style.display = 'none';
+
+    }, 600000)
+
+});
+

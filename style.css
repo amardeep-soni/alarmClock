@@ -241,9 +241,9 @@ body {
     height: 20px;
 }
 
-#setAlarmBtn {
-    padding: 18px 26px;
-    font-size: 22px;
+button {
+    padding: 16px 24px;
+    font-size: 18px;
     font-weight: bold;
     background-color: red;
     color: white;
@@ -252,6 +252,55 @@ body {
     border-radius: 10px;
     margin-top: 20px;
     cursor: pointer;
+}
+
+button:hover {
+    opacity: 0.7;
+}
+
+#firstShow,
+#secondShow,
+#thirdShow {
+    text-align: center;
+    display: none;
+}
+
+#showText {
+    font-size: 40px;
+    font-weight: bold;
+    color: black;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+#ringingText {
+    font-size: 30px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    margin-top: 20px;
+}
+
+.blink {
+    animation: example 0.6s linear infinite alternate;
+}
+
+@keyframes example {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+#message {
+    margin: 50px 0 0 0;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    color: white;
+    text-shadow: 2px 2px 2px #222222;
 }
 
 @media screen and (max-width: 1030px) {
